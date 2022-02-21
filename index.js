@@ -10,6 +10,7 @@ function refresh() {
 
 document.addEventListener("load", refresh);
 window.addEventListener("resize", refresh);
+window.addEventListener("blur", refresh);
 
 ////////shuffle functionality//////////////////
 
