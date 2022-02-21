@@ -32,10 +32,24 @@ scrolls.forEach((scroll) => {
 
   scroll.addEventListener("mouseout", notPicked);
 
-  scroll.addEventListener("click", function () {
-    this.removeEventListener("mouseout", notPicked);
+let isClicked = false;
 
-    document.querySelector(".show-poem").classList.add("show");
+  scroll.addEventListener("click", function () {
+    isClicked = !isClicked;
+
+    if(isClicked ===true){
+      this.setAttribute(
+        "src",
+        "images/scrolls/picked/scroll" + this.id + "_picked.png"
+      );
+    } else {
+      scroll.setAttribute("src", "images/scrolls/scroll_" + scroll.id + ".png");
+
+    }
+
+      this.removeEventListener("mouseout", notPicked);
+
+    document.querySelector(".show-poem").classList.toggle("show");
   });
 });
 
