@@ -1,5 +1,7 @@
 const num = Math.floor(Math.random() * 6) + 1;
 
+const scrolls = document.querySelectorAll(".scroll");
+
 function refresh() {
   setTimeout(function () {
     document.querySelector(".shuffle-btn").click();
@@ -7,6 +9,8 @@ function refresh() {
 }
 
 document.addEventListener("load", refresh);
+
+////////shuffle functionality//////////////////
 
 document.querySelector(".shuffle-btn").addEventListener("click", function () {
   document.querySelector("main").classList.add("shuffle");
@@ -16,53 +20,46 @@ document.querySelector(".shuffle-btn").addEventListener("click", function () {
   }, 1000);
 });
 
-const scrolls = document.querySelectorAll(".scroll");
+////////pick scroll functionality ////////////
 
 scrolls.forEach((scroll) => {
+  const picked = () => {
+    scroll.setAttribute("src", "images/scrolls/picked/scroll" + scroll.id + "_picked.png");
+  };
+
   const notPicked = () => {
     scroll.setAttribute("src", "images/scrolls/scroll_" + scroll.id + ".png");
   };
 
-  scroll.addEventListener("mouseover", function () {
-    this.setAttribute(
-      "src",
-      "images/scrolls/picked/scroll" + this.id + "_picked.png"
-    );
-  });
+  scroll.addEventListener("mouseover", picked);
 
   scroll.addEventListener("mouseout", notPicked);
 
-let isClicked = false;
+  let isClicked = false;
 
   scroll.addEventListener("click", function () {
     isClicked = !isClicked;
 
-    if(isClicked ===true){
-      this.setAttribute(
-        "src",
-        "images/scrolls/picked/scroll" + this.id + "_picked.png"
-      );
-    } else {
-      scroll.setAttribute("src", "images/scrolls/scroll_" + scroll.id + ".png");
+    (isClicked ===true) ? picked() : notPicked();
 
-    }
-
-      this.removeEventListener("mouseout", notPicked);
+    this.removeEventListener("mouseout", notPicked);
 
     document.querySelector(".show-poem").classList.toggle("show");
   });
 });
 
+//////// show poem functionality ////////////////////
+
 document.querySelector(".show-poem").addEventListener("click", function () {
   document.querySelector(".poem").classList.add("show");
-  document
-    .querySelector(".poem")
-    .setAttribute("src", "images/poems/fortune-poem-" + num + ".jpg");
+  document.querySelector(".poem").setAttribute("src", "images/poems/fortune-poem-" + num + ".jpg");
+
+  /////// restart functionality ////////////////////
   setTimeout(function () {
     document.querySelector(".reset").classList.add("show");
   }, 1500);
 });
 
 document.querySelector(".reset").addEventListener("click", function () {
-  window.location.reload();
+  document.location.reload();
 });
