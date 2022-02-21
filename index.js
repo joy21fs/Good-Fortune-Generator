@@ -3,14 +3,22 @@ const num = Math.floor(Math.random() * 6) + 1;
 const scrolls = document.querySelectorAll(".scroll");
 
 function refresh() {
-  setTimeout(function () {
-    document.querySelector(".shuffle-btn").click();
-  }, 10);
+  if (!window.location.hash) {
+    window.location = window.location + "#loaded";
+    window.location.reload();
+  }
+  // setTimeout(function () {
+  //   document.querySelector(".shuffle-btn").click();
+  // }, 10);
 }
 
 document.addEventListener("load", refresh);
-window.addEventListener("resize", refresh);
-window.addEventListener("blur", refresh);
+window.addEventListener("resize", function () {
+  window.location.reload();
+});
+window.addEventListener("blur", function () {
+  window.location.reload();
+});
 
 ////////shuffle functionality//////////////////
 
@@ -70,4 +78,5 @@ document.querySelector(".show-poem").addEventListener("click", function () {
 document.querySelector(".reset").addEventListener("click", function () {
   document.location.reload();
 });
+
 
