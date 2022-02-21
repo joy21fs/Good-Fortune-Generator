@@ -3,13 +3,10 @@ const num = Math.floor(Math.random() * 6) + 1;
 const scrolls = document.querySelectorAll(".scroll");
 
 function refresh() {
-  if (!window.location.hash) {
-    window.location = window.location + "#loaded";
-    window.location.reload();
-  }
-  // setTimeout(function () {
-  //   document.querySelector(".shuffle-btn").click();
-  // }, 10);
+ 
+  setTimeout(function () {
+    document.querySelector(".shuffle-btn").click();
+  }, 10);
 }
 
 document.addEventListener("load", refresh);
