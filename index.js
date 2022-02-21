@@ -9,6 +9,7 @@ function refresh() {
 }
 
 document.addEventListener("load", refresh);
+window.addEventListener("resize", refresh);
 
 ////////shuffle functionality//////////////////
 
@@ -24,7 +25,10 @@ document.querySelector(".shuffle-btn").addEventListener("click", function () {
 
 scrolls.forEach((scroll) => {
   const picked = () => {
-    scroll.setAttribute("src", "images/scrolls/picked/scroll" + scroll.id + "_picked.png");
+    scroll.setAttribute(
+      "src",
+      "images/scrolls/picked/scroll" + scroll.id + "_picked.png"
+    );
   };
 
   const notPicked = () => {
@@ -40,7 +44,7 @@ scrolls.forEach((scroll) => {
   scroll.addEventListener("click", function () {
     isClicked = !isClicked;
 
-    (isClicked ===true) ? picked() : notPicked();
+    isClicked === true ? picked() : notPicked();
 
     this.removeEventListener("mouseout", notPicked);
 
@@ -52,7 +56,9 @@ scrolls.forEach((scroll) => {
 
 document.querySelector(".show-poem").addEventListener("click", function () {
   document.querySelector(".poem").classList.add("show");
-  document.querySelector(".poem").setAttribute("src", "images/poems/fortune-poem-" + num + ".jpg");
+  document
+    .querySelector(".poem")
+    .setAttribute("src", "images/poems/fortune-poem-" + num + ".jpg");
 
   /////// restart functionality ////////////////////
   setTimeout(function () {
@@ -63,3 +69,4 @@ document.querySelector(".show-poem").addEventListener("click", function () {
 document.querySelector(".reset").addEventListener("click", function () {
   document.location.reload();
 });
+
