@@ -1,0 +1,139 @@
+body {
+  display: flex;
+  height: 90vh;
+  overflow: hidden;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  font-family: "Noto Serif TC", serif;
+  background-color: rgba(223, 238, 238, 255);
+  background-image: url("https://www.transparenttextures.com/patterns/nice-snow.png");
+}
+
+header {
+  margin-top: 1em;
+  max-width: 90%;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 900;
+  font-size: 2em;
+  text-align: justify;
+}
+
+main {
+  max-height: 70%;
+  position: relative;
+  display: inline-block;
+}
+
+.holder-with-poems {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#before {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#before .before {
+  position: relative;
+  height: 50%;
+}
+
+#before .top {
+  top: 0;
+}
+
+.scroll {
+  height: 100%;
+}
+
+#after {
+  width: 100%;
+  height: 50%;
+  z-index: 1;
+}
+
+.shuffle {
+  animation-name: shuffle;
+  animation-duration: 100ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 10;
+}
+
+/* poem */
+
+.poem {
+  position: absolute;
+  height: 100%;
+  top: 2%;
+  left: 0;
+  display: none;
+  z-index: -2;
+}
+
+/* button section */
+.btn-section {
+  position: relative;
+  margin-top: 0.3em;
+}
+
+button {
+  padding: 5px 45px;
+  background: linear-gradient(
+    185deg,
+    rgba(14, 233, 200, 1) 0%,
+    rgba(136, 201, 201, 0.8323923319327731) 100%
+  );
+  border: none;
+  color: #1b1f1f;
+  border-radius: 5px;
+  font-family: "Noto Serif TC", serif;
+  font-weight: 900;
+  font-size: 1em;
+  white-space: nowrap;
+}
+
+button:hover {
+  transform: scale(1.1);
+  border: solid 3px #4fb8b8;
+}
+
+.show-poem,
+.reset {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.show {
+  display: inherit;
+  z-index: 2;
+}
+
+@keyframes shuffle {
+  0% {
+    transform: rotate(12deg);
+  }
+
+  25% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(-12deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}

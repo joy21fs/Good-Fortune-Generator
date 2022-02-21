@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width" charset="utf-8" />
+    <title>Fortune Teller</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body onload="refresh()">
+    <header>
+      <h1>台 灣 文 學 抽 好 籤</h1>
+    </header>
+    <main>
+      <div id="before" class="holder-with-poems">
+        <img
+          class="holder-with-poems before top"
+          src="images/holder/holder_top.png"
+          alt="scroll-image"
+        />
+        <img
+          class="holder-with-poems before"
+          src="images/holder/holder_b.png"
+          alt="holder-with-poems-image"
+        />
+      </div>
+      <img
+        id="1"
+        class="holder-with-poems scroll scroll_1"
+        src="images/scrolls/scroll_1.png"
+        alt="scroll-image"
+      />
+      <img
+        id="2"
+        class="holder-with-poems scroll scroll_2"
+        src="images/scrolls/scroll_2.png"
+        alt="scroll-image"
+      />
+      <img
+        id="3"
+        class="holder-with-poems scroll scroll_3"
+        src="images/scrolls/scroll_3.png"
+        alt="scroll-image"
+      />
+      <img
+        id="4"
+        class="holder-with-poems scroll scroll_4"
+        src="images/scrolls/scroll_4.png"
+        alt="scroll-image"
+      />
+      <img
+        id="5"
+        class="holder-with-poems scroll scroll_5"
+        src="images/scrolls/scroll_5.png"
+        alt="scroll-image"
+      />
+      <img
+        id="6"
+        class="holder-with-poems scroll scroll_6"
+        src="images/scrolls/scroll_6.png"
+        alt="scroll-image"
+      />
+      <img
+        id="after"
+        class="holder-with-poems after"
+        src="images/holder/holder_a.png"
+        alt="holder-with-poems-image"
+      />
+
+      <img class="poem" src="" alt="poem" />
+    </main>
+    <div class="btn-section">
+      <button class="shuffle-btn">開 始</button>
+      <button class="show-poem">解 籤</button>
+      <button class="reset">重 來</button>
+    </div>
+
+    <script src="index.js" charset="utf-8"></script>
+  </body>
+</html>
