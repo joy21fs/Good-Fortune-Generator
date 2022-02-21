@@ -6,7 +6,7 @@ function refresh() {
  
   setTimeout(function () {
     document.querySelector(".shuffle-btn").click();
-  }, 10);
+  }, 100);
 }
 
 document.addEventListener("load", refresh);
