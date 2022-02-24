@@ -1,84 +1,86 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta name="viewport" content="width=device-width" charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      charset="utf-8"
+    />
     <title>Good Fortune Generator</title>
+
+    <!------------------- Google Fonts ------------------>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&display=swap"
       rel="stylesheet"
     />
+
+    <!------------------- CSS ------------------>
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body onload="refresh()">
+  <body>
     <header>
-      <h1>台 灣 文 學 抽 好 籤</h1>
+      <h1 class="text">台灣文學抽好籤</h1>
       <h6>點選「開始」搖晃籤筒後、點選任一支籤後可進行解籤</h6>
     </header>
     <main>
-      <div id="before" class="holder-with-poems">
-        <img
-          class="holder-with-poems before top"
-          src="images/holder/holder_top.png"
-          alt="scroll-image"
-        />
-        <img
-          class="holder-with-poems before"
-          src="images/holder/holder_b.png"
-          alt="holder-with-poems-image"
-        />
-      </div>
+      <img
+        class="holder-with-poems holder before"
+        src="images/holder/holder_b.svg"
+        alt="holder-image"
+      />
       <img
         id="1"
         class="holder-with-poems scroll scroll_1"
-        src="images/scrolls/scroll_1.png"
+        src="images/scrolls/scroll_1.svg"
         alt="scroll-image"
       />
       <img
         id="2"
         class="holder-with-poems scroll scroll_2"
-        src="images/scrolls/scroll_2.png"
+        src="images/scrolls/scroll_2.svg"
         alt="scroll-image"
       />
       <img
         id="3"
         class="holder-with-poems scroll scroll_3"
-        src="images/scrolls/scroll_3.png"
+        src="images/scrolls/scroll_3.svg"
         alt="scroll-image"
       />
       <img
         id="4"
-        class="holder-with-poems scroll scroll_4"
-        src="images/scrolls/scroll_4.png"
+        class="holder-with-poems scroll scroll_4 center-scroll"
+        src="images/scrolls/scroll_4.svg"
         alt="scroll-image"
       />
       <img
         id="5"
         class="holder-with-poems scroll scroll_5"
-        src="images/scrolls/scroll_5.png"
+        src="images/scrolls/scroll_5.svg"
         alt="scroll-image"
       />
       <img
         id="6"
         class="holder-with-poems scroll scroll_6"
-        src="images/scrolls/scroll_6.png"
+        src="images/scrolls/scroll_6.svg"
         alt="scroll-image"
       />
+
       <img
-        id="after"
-        class="holder-with-poems after"
-        src="images/holder/holder_a.png"
+        class="holder-with-poems holder after"
+        src="images/holder/holder_a.svg"
         alt="holder-with-poems-image"
       />
-
-      <img class="poem" src="" alt="poem" />
+      <!------------------- poems ------------------>
+      <img class="poem hidden" src="#" alt="poem-image" />
     </main>
+    <!------------------- buttons ------------------>
     <div class="btn-section">
-      <button class="shuffle-btn">開 始</button>
-      <button class="show-poem">解 籤</button>
-      <button class="reset">重 來</button>
+      <button class="shake-btn text">開始</button>
+      <button class="show-poem hidden text">解籤</button>
+      <button class="reset hidden text">重來</button>
     </div>
 
     <script src="index.js" charset="utf-8"></script>
